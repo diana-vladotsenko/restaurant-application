@@ -3,7 +3,8 @@
     "sass": "^1.97.3"
   },
   "scripts": {
-    "compile:sass": "sass ./src/styles.scss ./src/styles.css"
+    "compile:sass": "sass ./src/styles.scss ./src/styles.css",
+    "watch:sass": "sass --watch ./src/styles.scss:./src/styles.css"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.2.0"

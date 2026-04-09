@@ -8,7 +8,7 @@ The goal of this project is to create a modern and user-friendly restaurant webs
 The application focuses on clear navigation, an attractive visual design, and quick access to important information.
 
 ## Mockup
-[Link](mockup_url)
+[Link](https://www.figma.com/design/4zd1ZhGNwZAZcGWZpjqsFs/Untitled?node-id=1-2&t=Np0TxfG6PNq56FHo-1)
 
 ## How to Run the Project
 
@@ -24,15 +24,21 @@ The application focuses on clear navigation, an attractive visual design, and qu
 npm install
 ```
 
-3. Compile SCSS to CSS:
+3. Compile SCSS to CSS once:
 
 ```bash
 npm run compile:sass
 ```
 
-4. Open [index.html](index.html) in your browser.
+4. Or watch SCSS changes and auto-compile:
 
-Note: each time you edit [src/styles.scss](src/styles.scss), run this command again:
+```bash
+npm run watch:sass
+```
+
+5. Open [index.html](index.html) in your browser.
+
+If you are not using watch mode, each time you edit [src/styles.scss](src/styles.scss), run this command again:
 
 ```bash
 npm run compile:sass
