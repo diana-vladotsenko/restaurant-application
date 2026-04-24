@@ -8,7 +8,7 @@ The goal of this project is to create a modern and user-friendly restaurant webs
 The application focuses on clear navigation, an attractive visual design, and quick access to important information.
 
 ## Mockup
-[Link](https://www.figma.com/design/4zd1ZhGNwZAZcGWZpjqsFs/Untitled?node-id=1-2&t=Np0TxfG6PNq56FHo-1)
+[Link](https://www.figma.com/design/gg2Ucry05XbMXxWdvm1F8f/Untitled?node-id=0-1&t=rdJbB52DzLtcUALE-1)
 
 ## How to Run the Project
 
