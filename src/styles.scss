@@ -1,13 +1,135 @@
 /* Colors */
+$primary-color: #000000; // Primary theme color for buttons, links
+$disabled-color: #bdc3c7; // Neutral color for disabled states
+$focus-color: #2545c3; // Accesibility color for focus states
+$success-color: #2b973a; // Success accent color for success actions
+// $success-content: #249233; // Success content color for success action
+$error-color: #dd3822; // Error accent color for warning actions
+// $error-content: #dd3822; // Error content color for warning action
+$bg-color: #FFFFFF; // Background color
 
-/* Other variables */
+$text-main-color: #000000; // Text color for Main Text, Headers
+$text-secondary-color: #334155; // Text color for Secondary Text, Headers
+$text-ghost-color: #98A1B0; // Text color for Ghost Text, Headers
+$color-border: #1A1A1A; // Color for borders, dividers
+
 
 /* Mixins */
+@mixin control-base() {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 140px;
+    min-height: 40px;
+    border: 1px solid $color-border;
+    background-color: transparent;
+    padding: 5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $primary-color;
+}
+
 
 /* Main Elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    background: $bg-color;
+    margin: 20px;
+    max-width: 850px;
+}
+
+main{
+    min-height: 100vh;
+}
+
 
 /* Headings */
+h1,h2,h3,h4{
+    color: $text-main-color;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 12px; 
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 1.75rem;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+h4{
+    font-size: 1.125rem;
+}
+
+/* Body text */
+p{
+    color: $text-main-color;
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+.p-secondary{
+    color: $text-secondary-color;
+}
+
+.p-ghost{
+    color: $text-ghost-color;
+}
+
+.p-success{
+    color: $success-color;
+}
+
+.p-error{
+    color: $error-color;
+}
+
 
 /* Buttons */
+button {
+    @include control-base();
+    cursor: pointer;
+}
+
+button:hover,
+button:active {
+    text-decoration: underline;
+}
+
+button:disabled {
+    color: $disabled-color;
+    border: 1px solid $disabled-color;
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
 
 /* Other components */
+.badge {
+    @include control-base();
+    min-width: 8px;
+    min-height: 8px;
+    font-size: 0.625rem;
+}
+
+/* Other */
+/* Shared focus accessibility: interactive elements use the same focus color so the UI feels consistent */
+button:focus-visible,
+.badge:focus-visible {
+    outline: 2px solid $focus-color;
+}
+
+
+/* Responsivness */
