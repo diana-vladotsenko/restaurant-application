@@ -1,0 +1,164 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "name": "Moussaka",
+      "description": "Layers of aubergine, spiced minced lamb, potato & golden béchamel",
+      "badge": "Signature",
+      "price": 19,
+      "type": "mains"
+    },
+    {
+      "id": 2,
+      "name": "Pastitsio",
+      "description": "Tubular pasta, slow-cooked beef ragù, nutmeg béchamel crust",
+      "badge": null,
+      "price": 17,
+      "type": "mains"
+    },
+    {
+      "id": 3,
+      "name": "Lamb Kleftiko",
+      "description": "Slow-roasted lamb shoulder, potatoes, tomatoes, feta, herbs en papillote",
+      "badge": null,
+      "price": 26,
+      "type": "mains"
+    },
+    {
+      "id": 4,
+      "name": "Stifado",
+      "description": "Braised beef & pearl onion stew, red wine, cinnamon, bay",
+      "badge": null,
+      "price": 22,
+      "type": "mains"
+    },
+    {
+      "id": 5,
+      "name": "Chicken Gyros Plate",
+      "description": "Rotisserie chicken, tzatziki, pita, hand-cut fries, pickled onion",
+      "badge": null,
+      "price": 15,
+      "type": "mains"
+    },
+    {
+      "id": 6,
+      "name": "Souvlaki Platter",
+      "description": "Pork skewers, pita, fries, tzatziki, tomato-onion salad",
+      "badge": null,
+      "price": 16,
+      "type": "mains"
+    },
+    {
+      "id": 7,
+      "name": "Imam Bayildi",
+      "description": "Stuffed aubergine, tomato, onion, garlic, currant & pine nut",
+      "badge": "Vegetarian",
+      "price": 14,
+      "type": "mains"
+    },
+    {
+      "id": 8,
+      "name": "Grilled Sea Bream",
+      "description": "Whole sea bream, lemon, capers, herb oil, roasted vegetables",
+      "badge": null,
+      "price": 28,
+      "type": "grill"
+    },
+    {
+      "id": 9,
+      "name": "Grilled Octopus",
+      "description": "Chargrilled tentacles, red wine vinegar, oregano, chickpea purée",
+      "badge": null,
+      "price": 24,
+      "type": "grill"
+    },
+    {
+      "id": 10,
+      "name": "Lamb Chops",
+      "description": "Marinated cutlets, rosemary, lemon, tzatziki, oven potatoes",
+      "badge": "3 pcs",
+      "price": 32,
+      "type": "grill"
+    },
+    {
+      "id": 11,
+      "name": "Mixed Grill Platter",
+      "description": "Pork souvlaki, lamb kofta, loukanika sausage, pita, fries",
+      "badge": "For two",
+      "price": 29,
+      "type": "grill"
+    },
+    {
+      "id": 12,
+      "name": "Swordfish Souvlaki",
+      "description": "Chargrilled swordfish skewer, cherry tomato, capsicum, lemon butter",
+      "badge": null,
+      "price": 26,
+      "type": "grill"
+    },
+    {
+      "id": 13,
+      "name": "T-Bone Hellas Style",
+      "description": "400 g dry-aged T-bone, herb butter, rosemary potatoes, chimichurri",
+      "badge": null,
+      "price": 44,
+      "type": "grill"
+    },
+    {
+      "id": 14,
+      "name": "Ouzo",
+      "description": "Traditional Greek anise spirit",
+      "badge": null,
+      "price": 5,
+      "type": "beverages"
+    },
+    {
+      "id": 15,
+      "name": "Greek Wine Red",
+      "description": "Selection of local Greek red wine",
+      "badge": null,
+      "price": 7,
+      "type": "beverages"
+    },
+    {
+      "id": 16,
+      "name": "Greek Wine White",
+      "description": "Selection of local Greek white wine",
+      "badge": null,
+      "price": 7,
+      "type": "beverages"
+    },
+    {
+      "id": 17,
+      "name": "Greek Coffee",
+      "description": "Traditional Greek coffee, served with foam",
+      "badge": null,
+      "price": 3,
+      "type": "beverages"
+    },
+    {
+      "id": 18,
+      "name": "Frappe",
+      "description": "Iced Greek coffee with milk",
+      "badge": null,
+      "price": 3.5,
+      "type": "beverages"
+    },
+    {
+      "id": 19,
+      "name": "Espresso",
+      "description": "Single or double shot",
+      "badge": null,
+      "price": 2.5,
+      "type": "beverages"
+    },
+    {
+      "id": 20,
+      "name": "Fresh Orange Juice",
+      "description": "Freshly squeezed orange juice",
+      "badge": null,
+      "price": 4,
+      "type": "beverages"
+    }
+  ]
+}

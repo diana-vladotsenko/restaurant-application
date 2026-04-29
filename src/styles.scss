@@ -29,6 +29,28 @@ $color-border: #1A1A1A; // Color for borders, dividers
     color: $primary-color;
 }
 
+@mixin disabled-style{
+    background: transparent;
+    -webkit-text-fill-color: $disabled-color; // to ensure Chrome/Safari apply text color
+    border: 1px solid $disabled-color;
+    cursor: not-allowed;
+}
+
+@mixin focus-style{
+    outline: 2px solid $focus-color;
+}
+
+@mixin input{
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 510px;
+    padding: 8px;
+    border: 1px solid $color-border;
+    margin-bottom: 12px;
+    background: $bg-color;    
+    -webkit-text-fill-color: $text-ghost-color; // ensure Chrome/Safari apply text color
+}
+
 
 /* Main Elements */
 * {
@@ -41,7 +63,7 @@ body{
     font-family: 'Open Sans', sans-serif;
     background: $bg-color;
     margin: 20px;
-    max-width: 850px;
+    min-width: 850px;
 }
 
 main{
@@ -80,12 +102,17 @@ p{
     line-height: 1.6;
 }
 
-.p-secondary{
+.p-secondary,
+.p-helper{
     color: $text-secondary-color;
 }
 
 .p-ghost{
     color: $text-ghost-color;
+}
+
+.p-helper{
+    font-size: 14px;
 }
 
 .p-success{
@@ -104,17 +131,68 @@ button {
 }
 
 button:hover,
-button:active {
+button:active,
+a:hover,
+a:active {
     text-decoration: underline;
 }
 
 button:disabled {
-    color: $disabled-color;
-    border: 1px solid $disabled-color;
-    text-decoration: none;
-    cursor: not-allowed;
+    @include disabled-style;
 }
 
+a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color:$text-main-color;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $primary-color;
+    margin: 12px;
+    cursor: pointer;
+}
+
+/* Inputs & Form Elements */
+input,
+textarea{
+    @include input();
+}
+
+textarea{
+    min-height: 100px;
+    resize: vertical;
+}
+
+input:hover,
+textarea:hover,
+input:active,
+textarea:active{
+    outline: 1px solid $color-border;
+}
+
+input:disabled,
+textarea:disabled{
+    @include disabled-style;
+}
+
+form{
+    gap: 12px;
+}
+
+fieldset{
+    border: 0;
+}
+
+label{
+    font-weight: 600;
+}
+
+legend{
+    font-weight: 700;
+    margin-bottom: 12px;
+}
 
 /* Other components */
 .badge {
@@ -124,12 +202,147 @@ button:disabled {
     font-size: 0.625rem;
 }
 
+.book-table-container{
+    max-width: 510px;
+    margin: 24px auto;
+    display: block;
+}
+
+.divider{
+    border-bottom: 1px solid $color-border;
+}
+
 /* Other */
 /* Shared focus accessibility: interactive elements use the same focus color so the UI feels consistent */
 button:focus-visible,
-.badge:focus-visible {
-    outline: 2px solid $focus-color;
+.badge:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+    @include focus-style();
 }
 
 
 /* Responsivness */
+
+/* Tablet: 768px and up */
+@media (max-width: 768px) {
+    body {
+        margin: 16px;
+        min-width: auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    form {
+        max-width: 100%;
+        gap: 4px;
+    }
+
+    input,
+    textarea {
+        max-width: 100%;
+    }
+
+    button {
+        min-width: 120px;
+        min-height: 36px;
+        font-size: 0.9rem;
+    }
+
+    label {
+        font-size: 0.95rem;
+    }
+
+    .p-helper {
+        font-size: 0.85rem;
+        margin: 3px 0 5px;
+    }
+
+    .book-table-container {
+        max-width: 100%;
+        padding: 12px;
+    }
+}
+
+/* Mobile: 480px */
+@media (max-width: 480px) {
+    body {
+        margin: 12px;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    legend, h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    form {
+        max-width: 100%;
+        gap: 8px;
+    }
+
+    button {
+        width: 100%;
+        min-height: 44px;
+        font-size: 0.9rem;
+    }
+
+    input,
+    textarea {
+        max-width: 100%;
+        padding: 6px;
+        font-size: 16px; // prevents zoom on iOS
+        margin-bottom: 10px;
+    }
+
+    textarea {
+        min-height: 80px;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    legend {
+        font-weight: 700;
+    }
+
+    .p-helper {
+        font-size: 0.8rem;
+        margin: 2px 0 4px;
+    }
+
+    .badge {
+        min-width: 6px;
+        min-height: 6px;
+        font-size: 0.55rem;
+    }
+}
+
