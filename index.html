@@ -3,43 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant</title>
+    <title>Hellas Taverna</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="src/styles.css">
 </head>
-
 <body>
-    <!-- Header -->
-     <header aria-label="Header"></header>
 
-    <!-- Main -->
+    <header class="header divider">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <h2><a href="index.html" class="logo">Hellas</a></h2>
+            </div>
+            <nav class="nav">
+                <a href="#about">Our Story</a>
+                <a href="#menu">Menu</a>
+                <button onclick="window.location.href='reservation.html'">Book a Table</button>
+            </nav>
+        </div>
+    </header>
+
     <main>
-        <h1>H1 Main</h1>
-        <h2>H2 Main</h2>
-        <h3>H3 Main</h3>
-        <h4>H4 Main</h4>
-        <h4 class="p-secondary">H4 Secondary</h4>
-        <h4 class="p-ghost">H4 Ghost</h4>
-        <p>Main text - Donec aliquet porttitor ante, ut mattis orci posuere et. Main text - Donec aliquet porttitor ante, ut mattis orci posuere et. Main text - Donec aliquet porttitor ante, ut mattis orci posuere et.</p>
-        <p class="p-secondary">Secondary text - Donec aliquet porttitor ante, ut mattis orci posuere et.</p>
-        <p class="p-ghost">Ghost text - Donec aliquet porttitor ante, ut mattis orci posuere et.</p>
+        <section class="hero divider">
+            <div class="container hero-inner">
+                <div class="hero-content text-center">
+                    <h1>A Taste of the Aegean</h1>
+                    <p class="p-secondary">Simple, high-quality ingredients, prepared with love.</p>
+                    <br>
+                    <button onclick="window.location.href='reservation.html'">Reserve Now</button>
+                </div>
+            </div>
+        </section>
 
-        <p class="p-success">Success!</p>
-        <p class="p-error">Error!</p>
+        <section id="about" class="about divider">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <p class="p-ghost">Our Story</p>
+                    <h2>The Greek Way</h2>
+                    <p>Inspired by the sun-drenched shores of Greece, Hellas Taverna offers an authentic culinary journey. We embrace the Mediterranean philosophy of shared meals and family.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1758561087076-e647b2e2485a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Interior">
+                </div>
+            </div>
+        </section>
 
-        <button>Book a table</button>
-        <button disabled>Disabled</button>
-        <button>Book a table table table table tabletabletable</button>
-        <div class="badge" tabindex="0">Badge</div>
+        <section id="menu" class="menu divider">
+            <div class="container">
+                <div class="text-center">
+                    <p class="p-ghost">Discover</p>
+                    <h2>Our Menu</h2>
+                </div>
+
+                <div class="menu-grid">
+                    <article class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Tzatziki</h3>
+                            <div class="badge" tabindex="0">€8</div>
+                        </div>
+                        <p class="p-secondary">Greek yogurt, cucumber, garlic, dill, served with warm pita</p>
+                    </article>
+
+                    <article class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Moussaka</h3>
+                            <div class="badge" tabindex="0">€22</div>
+                        </div>
+                        <p class="p-secondary">Baked layers of eggplant, potato, minced meat, and rich béchamel</p>
+                    </article>
+
+                    <article class="menu-item">
+                        <div class="menu-item-header">
+                            <h3>Souvlaki Platter</h3>
+                            <div class="badge" tabindex="0">€18</div>
+                        </div>
+                        <p class="p-secondary">Char-grilled skewers, pita bread, hand-cut fries, and tzatziki</p>
+                    </article>
+                </div>
+                
+                <div class="text-center" style="margin-top: 30px;">
+                    <a href="menu.html">View Full Menu <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+                </div>
+            </div>
+        </section>
     </main>
-            
-    <!-- Footer -->
-    <footer aria-label="Footer"></footer>
 
-    <!-- Scripts -->
-    <script src=""></script>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h2>Hellas Taverna</h2>
+                    <p class="p-ghost">123 Aegean Way, NY 10001</p>
+                    <p class="p-ghost">© 2026 All Rights Reserved</p>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h3>Join our Newsletter</h3>
+                    <form action="#">
+                        <label for="email" class="p-helper">Email Address</label>
+                        <div class="form-row">
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
