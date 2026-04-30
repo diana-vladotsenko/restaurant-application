@@ -3,66 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book a table</title>
+    <title>Book a Table | Hellas Taverna</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
     <link rel="stylesheet" href="src/styles.css">
 </head>
 
 <body>
-    <!-- Header -->
-    <!-- TODO(Diana): change header to make it consistent -->
-    <header>
-        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-        <a href="/" aria-label="Go back to homepage">Go Back To Homepage</a>
-        <div class="divider" aria-hidden="true"></div>
+    <header class="header divider">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <h2><a href="index.html" class="logo">Hellas</a></h2>
+            </div>
+            <nav class="nav">
+                <a href="index.html"><i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i> Back to Homepage</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Main -->
     <main class="book-table-container">
-        <h2>Book a Table</h2>
-        <!-- Form -->
+        <h2 style="margin-top: 20px;">Book a Table</h2>
+        
         <form id="book-a-table-form">
             <fieldset>
                 <legend>Reservation form</legend>
-                <!-- Full Name -->
+                
                 <label for="name">Full Name</label><br/>
                 <p id="name-help" class="p-helper">Enter your full name.</p>
                 <input type="text" id="name" name="name" placeholder="John Doe" aria-describedby="name-help" autocomplete="name" required/><br/>
 
-                <!-- E-mail -->
                 <label for="email">Email</label><br/>
                 <p id="email-help" class="p-helper">Enter a valid email address we can use to contact you.</p>
                 <input type="email" id="email" name="email" placeholder="your@email.com" aria-describedby="email-help" autocomplete="email" required/><br/>
 
-                <!-- Phonenumber -->
                 <label for="phone">Phonenumber</label><br/>
                 <p id="phone-help" class="p-helper">Include your country code, e.g. +37212345678.</p>
-                <input type="tel" id="phone" name="phone" placeholder="+37212345678" inputmode="tel" aria-describedby="phone-help" autocomplete="tel" pattern="\+372[0-9]{8}" required/><br/>
+                <input type="tel" id="phone" name="phone" placeholder="+37212345678" inputmode="tel" aria-describedby="phone-help" autocomplete="tel" pattern="\+372[0-9]{7,8}" required/><br/>
                 
-                <!-- Reservation Date & Time -->
                 <label for="reservation_date">Reservation Date & Time</label><br/>
-                <p id="reservation-help" class="p-helper">Select a date and time for your reservation using the browser picker. Example: 2026-05-01 19:00.</p>
+                <p id="reservation-help" class="p-helper">Select a date and time for your reservation.</p>
                 <input type="datetime-local" id="reservation_date" name="reservation_date" aria-describedby="reservation-help" required><br/>
 
-                <!-- People participation -->
                 <label for="guest_count">How many people will be with you?</label><br/>
-                <p id="guest-count-help" class="p-helper">Enter or choose the number of guests including yourself.</p>
+                <p id="guest-count-help" class="p-helper">Enter or choose the number of guests.</p>
                 <input type="number" id="guest_count" name="guest_count" min="1" max="20" step="1" aria-describedby="guest-count-help" required><br/>
 
-                <!-- Note -->
                 <label for="note">Note (Optional)</label><br/>
                 <p id="note-help" class="p-helper">Add any notes or requests. Maximum 300 characters.</p>
                 <textarea id="note" name="note" rows="4" cols="30" placeholder="Any notes or requests" aria-describedby="note-help" maxlength="300"></textarea><br/>
                 
-                <button type="submit">Book a table</button>
-                <p id="success-text" class="p-success" aria-live="polite"></p>
+                <button type="submit" style="margin-top: 10px;">Book a table</button>
+                <p id="success-text" class="p-success" aria-live="polite" style="margin-top: 15px; font-weight: bold;"></p>
             </fieldset>
         </form>
     </main>
 
-    <!-- Scripts -->
     <script src="src/js/book_table.js"></script>
 </body>
+</html>
