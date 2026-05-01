@@ -91,7 +91,7 @@ p {
 .p-helper { color: $text-secondary-color; }
 .p-ghost { color: $text-ghost-color; }
 .p-helper { font-size: 14px; }
-.p-success { color: $success-color; }
+.p-success { color: $success-color; margin-top: 12px; font-weight: 600;}
 .p-error { color: $error-color; }
 
 /* Buttons */
