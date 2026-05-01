@@ -157,12 +157,6 @@ legend { font-weight: 700; margin-bottom: 12px; }
     padding: 2px 8px; /* Добавил паддинг, чтобы ценник смотрелся лучше */
 }
 
-.book-table-container {
-    max-width: 510px;
-    margin: 24px auto;
-    display: block;
-}
-
 .divider { border-bottom: 1px solid $color-border; }
 
 .products{ margin-bottom: 24px; }
@@ -174,6 +168,10 @@ legend { font-weight: 700; margin-bottom: 12px; }
     align-items: flex-start;
     padding: 12px 0;
     border-bottom: 1px solid $light-color-border;
+}
+
+i{
+    margin-right: 8px;
 }
 
 .product-card-content{ flex: 1 1 auto; min-width: 0; }
@@ -197,6 +195,13 @@ a:focus-visible {
     margin: 0 auto;
     padding: 40px 20px;
 }
+
+.container-centered {
+    max-width: 510px;
+    margin: 24px auto;
+    display: block;
+}
+
 
 .text-center { text-align: center; }
 
