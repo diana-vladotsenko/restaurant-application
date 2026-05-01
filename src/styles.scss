@@ -1,15 +1,16 @@
 /* Colors */
-$primary-color: #000000;
-$disabled-color: #bdc3c7;
-$focus-color: #2545c3;
-$success-color: #2b973a;
-$error-color: #dd3822;
-$bg-color: #FFFFFF;
+$primary-color: #000000; // Primary theme color for buttons, links
+$disabled-color: #bdc3c7; // Neutral color for disabled states
+$focus-color: #2545c3; // Accesibility color for focus states
+$success-color: #2b973a; // Success accent color for success actions
+$error-color: #dd3822; // Error accent color for warning actions
+$bg-color: #FFFFFF; // Background color
 
-$text-main-color: #000000;
-$text-secondary-color: #334155;
-$text-ghost-color: #98A1B0;
-$color-border: #1A1A1A;
+$text-main-color: #000000; // Text color for Main Text, Headers
+$text-secondary-color: #334155; // Text color for Secondary Text, Headers
+$text-ghost-color: #98A1B0; // Text color for Ghost Text, Headers
+$color-border: #1A1A1A; // Dark Color for borders, dividers
+$light-color-border: #d9d9d9; // Light color for borders, dividers
 
 /* Mixins */
 @mixin control-base() {
@@ -164,9 +165,21 @@ legend { font-weight: 700; margin-bottom: 12px; }
 
 .divider { border-bottom: 1px solid $color-border; }
 
+.products{ margin-bottom: 24px; }
+
+.product-card{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid $light-color-border;
+}
+
+.product-card-content{ flex: 1 1 auto; min-width: 0; }
+
 /* Accessibility */
 button:focus-visible,
-.badge:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 a:focus-visible {
@@ -356,6 +369,10 @@ a:focus-visible {
         flex-direction: column;
         button { width: 100%; margin: 10px 0 0 0; }
     }
+
+    .product-card{
+        max-width: 100%;
+    }
 }
 
 /* Mobile: 480px */
@@ -393,5 +410,14 @@ a:focus-visible {
         flex-wrap: wrap;
         justify-content: center;
         button { margin: 10px 0; }
+    }
+    
+    .product-card {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .product-card aside { 
+        text-align: right; 
     }
 }
