@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					const groupItems = groups[type];
 
 					let section = sections.find((s) => {
-						const h = s.querySelector('h4.p-ghost');
+						const h = s.querySelector('.p-ghost');
 						if (!h) return false;
 						const txt = h.textContent.trim().toLowerCase();
 						return txt.includes(type) || type.includes(txt);
@@ -33,13 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
 						section = document.createElement('section');
 						section.className = 'products';
 						section.setAttribute('aria-label', 'Meals');
-						const h4 = document.createElement('h4');
-						h4.className = 'p-ghost';
-						h4.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+						const p = document.createElement('p');
+						p.className = 'p-ghost';
+						p.textContent = type.charAt(0).toUpperCase() + type.slice(1);
 						const div = document.createElement('div');
 						div.className = 'divider';
 						div.setAttribute('aria-hidden', 'true');
-						section.appendChild(h4);
+						section.appendChild(p);
 						section.appendChild(div);
 						document.querySelector('main').appendChild(section);
 						sections.push(section);

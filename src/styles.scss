@@ -8,7 +8,7 @@ $bg-color: #FFFFFF; // Background color
 
 $text-main-color: #000000; // Text color for Main Text, Headers
 $text-secondary-color: #334155; // Text color for Secondary Text, Headers
-$text-ghost-color: #98A1B0; // Text color for Ghost Text, Headers
+$text-ghost-color: #677285; // Text color for Ghost Text, Headers
 $color-border: #1A1A1A; // Dark Color for borders, dividers
 $light-color-border: #d9d9d9; // Light color for borders, dividers
 
@@ -167,7 +167,7 @@ legend { font-weight: 700; margin-bottom: 12px; }
     gap: 20px;
     align-items: flex-start;
     padding: 12px 0;
-    border-bottom: 1px solid $light-color-border;
+    border-bottom: 1px dashed $light-color-border;
 }
 
 i{
@@ -305,7 +305,7 @@ a:focus-visible {
     }
 
     .menu-item {
-        border-bottom: 1px dashed $disabled-color;
+        border-bottom: 1px dashed $light-color-border;
         padding-bottom: 20px;
 
         .menu-item-header {
