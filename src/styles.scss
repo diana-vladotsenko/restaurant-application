@@ -200,6 +200,7 @@ a:focus-visible {
     max-width: 510px;
     margin: 24px auto;
     display: block;
+    padding: 10px 20px;
 }
 
 
@@ -383,9 +384,9 @@ a:focus-visible {
 /* Mobile: 480px */
 @media (max-width: 480px) {
     h1 { font-size: 1.5rem; }
-    legend, h2 { font-size: 1.25rem; }
+    h2 { font-size: 1.25rem; }
     h3 { font-size: 1.1rem; }
-    p { font-size: 0.95rem; }
+    legend,p { font-size: 0.95rem; }
 
     form { gap: 8px; }
     

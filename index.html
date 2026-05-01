@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="src/styles.css">
   </head>
   <body>
+     <!-- Header -->
     <header class="header divider">
       <div class="container header-inner">
         <div class="logo-area">
@@ -24,7 +25,10 @@
         </nav>
       </div>
     </header>
+
+    <!-- Main -->
     <main>
+      <!-- Hero -->
       <section class="hero divider">
         <div class="container hero-inner">
           <div class="hero-content text-center">
@@ -35,6 +39,8 @@
           </div>
         </div>
       </section>
+
+      <!-- About -->
       <section id="about" class="about divider">
         <div class="container about-grid">
           <div class="about-text">
@@ -47,6 +53,8 @@
           </div>
         </div>
       </section>
+
+      <!-- Menu -->
       <section id="menu" class="menu divider">
         <div class="container">
           <div class="text-center">
@@ -82,6 +90,8 @@
         </div>
       </section>
     </main>
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-grid">
@@ -93,21 +103,25 @@
             <p class="p-ghost">
               <i class="fa-solid fa-location-dot"></i> Narva mnt 25, 10120 Tallinn
             </p>
-            <a href="https://maps.google.com/?q=Tallinna+Ülikool,+Narva+mnt+25,+Tallinn" target="_blank" style="margin: 12px 0;">
-            <i class="fa-solid fa-map" style="margin-right: 8px;"></i> Vaata kaardil
+            <a href="https://maps.google.com/?q=Tallinna+Ülikool,+Narva+mnt+25,+Tallinn" target="_blank" rel="noopener noreferrer" style="margin: 12px 0;">
+              <i class="fa-solid fa-map"></i> View on Map
             </a>
             <p class="p-ghost" style="margin-top: 16px;">© 2026 All Rights Reserved</p>
           </div>
-          <div class="footer-newsletter">
+
+          <!-- Newsletter -->
+          <form id="footer-newsletter-form" class="footer-newsletter">
             <h3>Join our Newsletter</h3>
-            <form action="#">
-              <label for="email" class="p-helper">Email Address</label>
-              <div class="form-row">
-                <input type="email" id="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-              </div>
-            </form>
-          </div>
+            <fieldset>
+              <legend>Subscribe to our newsletter!</legend>
+
+              <label for="email">Email Address</label>
+              <p id="email-help" class="p-helper">Enter your email address.</p>
+              <input type="email" id="email" name="email" placeholder="your@email.com" aria-describedby="email-help" autocomplete="email" required />
+
+              <button type="submit">Subscribe</button>
+            </fieldset>
+          </form>
         </div>
       </div>
     </footer>
