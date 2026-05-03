@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					return acc;
 				}, {});
 
-				const sections = Array.from(document.querySelectorAll('section.products'));
+				const sections = Array.from(document.querySelectorAll('section.menu-section'));
 
 				Object.keys(groups).forEach((type) => {
 					const groupItems = groups[type];
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 					if (!section) {
 						section = document.createElement('section');
-						section.className = 'products';
+						section.className = 'menu-section';
 						section.setAttribute('aria-label', 'Meals');
 						const p = document.createElement('p');
 						p.className = 'p-ghost';
@@ -47,11 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 					groupItems.forEach((item) => {
 						const article = document.createElement('article');
-						article.className = 'product-card';
+						article.className = 'menu-item';
 						article.setAttribute('aria-label', 'Meal');
 
 						const content = document.createElement('div');
-						content.className = 'product-card-content';
+						content.className = 'menu-item-content';
 
 						const title = document.createElement('h4');
 						title.textContent = item.name || '';

@@ -13,6 +13,7 @@ $color-border: #1A1A1A; // Dark Color for borders, dividers
 $light-color-border: #d9d9d9; // Light color for borders, dividers
 
 /* Mixins */
+/* Shared button/link/badge styling used to keep controls visually consistent. */
 @mixin control-base() {
     display: inline-flex;
     justify-content: center;
@@ -27,6 +28,7 @@ $light-color-border: #d9d9d9; // Light color for borders, dividers
     color: $primary-color;
 }
 
+/* Reusable disabled-state styling for buttons and form fields. */
 @mixin disabled-style{
     background: transparent;
     -webkit-text-fill-color: $disabled-color;
@@ -34,10 +36,12 @@ $light-color-border: #d9d9d9; // Light color for borders, dividers
     cursor: not-allowed;
 }
 
+/* Focus ring used for keyboard accessibility on interactive elements. */
 @mixin focus-style{
     outline: 2px solid $focus-color;
 }
 
+/* Standard input sizing and text color for form controls. */
 @mixin input{
     box-sizing: border-box;
     width: 100%;
@@ -53,14 +57,13 @@ $light-color-border: #d9d9d9; // Light color for borders, dividers
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Важно для сеток! */
+    box-sizing: border-box;
 }
 
 body {
     min-height: 100vh;
     font-family: 'Open Sans', sans-serif;
     background: $bg-color;
-    /* Убрали margin: 20px; чтобы шапка и футер были на всю ширину */
 }
 
 main {
@@ -154,27 +157,13 @@ legend { font-weight: 700; margin-bottom: 12px; }
     min-width: 8px;
     min-height: 8px;
     font-size: 0.625rem;
-    padding: 2px 8px; /* Добавил паддинг, чтобы ценник смотрелся лучше */
+    padding: 2px 8px;
 }
 
 .divider { border-bottom: 1px solid $color-border; }
 
-.products{ margin-bottom: 24px; }
+i { margin-right: 8px;}
 
-.product-card{
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 12px 0;
-    border-bottom: 1px dashed $light-color-border;
-}
-
-i{
-    margin-right: 8px;
-}
-
-.product-card-content{ flex: 1 1 auto; min-width: 0; }
 
 /* Accessibility */
 button:focus-visible,
@@ -185,10 +174,7 @@ a:focus-visible {
 }
 
 
-/* =========================================
-   LAYOUT & SECTIONS (То, что не работало)
-   ========================================= */
-
+/* Layouts & Sections */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -292,7 +278,7 @@ a:focus-visible {
 }
 
 /* Menu */
-.menu { background-color: #fafafa; }
+.menu { background-color: $bg-color; }
 
 .menu-grid {
     display: grid;
@@ -303,22 +289,20 @@ a:focus-visible {
     @media (min-width: 1024px) {
         grid-template-columns: 1fr 1fr;
     }
-
-    .menu-item {
-        border-bottom: 1px dashed $light-color-border;
-        padding-bottom: 20px;
-
-        .menu-item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            gap: 20px;
-            margin-bottom: 8px;
-        }
-
-        h3 { margin-bottom: 0; }
-    }
 }
+
+.menu-section{ margin-bottom: 24px; }
+
+.menu-item{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px dashed $light-color-border;
+}
+
+.menu-item-content{ flex: 1 1 auto; min-width: 0; }
 
 /* Footer */
 .footer {
@@ -341,10 +325,7 @@ a:focus-visible {
     }
 }
 
-/* =========================================
-   RESPONSIVENESS (Медиа-запросы)
-   ========================================= */
-
+/* Responsivness */
 /* Tablet: 768px and up */
 @media (max-width: 768px) {
     h1 { font-size: 2rem; }
@@ -361,7 +342,6 @@ a:focus-visible {
 
     .p-helper { font-size: 0.85rem; }
 
-    /* Layout fixes for tablet */
     .about-grid, 
     .footer-grid {
         grid-template-columns: 1fr;
@@ -376,7 +356,7 @@ a:focus-visible {
         button { width: 100%; margin: 10px 0 0 0; }
     }
 
-    .product-card{
+    .menu-item{
         max-width: 100%;
     }
 }
@@ -406,7 +386,6 @@ a:focus-visible {
         font-size: 0.55rem;
     }
 
-    /* Layout fixes for mobile */
     .header .header-inner {
         flex-direction: column;
         gap: 15px;
@@ -418,12 +397,12 @@ a:focus-visible {
         button { margin: 10px 0; }
     }
     
-    .product-card {
+    .menu-item {
         width: 100%;
         flex-direction: row;
     }
 
-    .product-card aside { 
+    .menu-item aside { 
         text-align: right; 
     }
 }
