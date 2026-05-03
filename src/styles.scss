@@ -94,8 +94,8 @@ p {
 .p-helper { color: $text-secondary-color; }
 .p-ghost { color: $text-ghost-color; }
 .p-helper { font-size: 14px; }
-.p-success { color: $success-color; margin-top: 12px; font-weight: 600;}
-.p-error { color: $error-color; }
+.p-success { color: $success-color; margin-top: 12px; font-weight: 600; }
+.p-error { color: $error-color; margin-bottom: 12px; font-weight: 600; }
 
 /* Buttons */
 button {
@@ -111,7 +111,11 @@ a:active {
 }
 
 button:disabled {
-    @include disabled-style;
+    @include disabled-style();
+}
+
+.link-button {
+    @include control-base();
 }
 
 a {
@@ -143,7 +147,7 @@ input:active, textarea:active {
 }
 
 input:disabled, textarea:disabled {
-    @include disabled-style;
+    @include disabled-style();
 }
 
 form { gap: 12px; }
@@ -292,6 +296,8 @@ a:focus-visible {
 }
 
 .menu-section{ margin-bottom: 24px; }
+
+.menu-status { margin-bottom: 16px; }
 
 .menu-item{
     display: flex;

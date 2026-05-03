@@ -1,5 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const menuPath = 'src/json/menu.json';
+	const statusEl = document.getElementById('menu-status');
+
+	function setStatus(message, isError = false) {
+		if (!statusEl) return;
+		statusEl.textContent = message;
+		statusEl.classList.toggle('p-error', isError);
+		statusEl.setAttribute('role', isError ? 'alert' : 'status');
+	}
+
+	setStatus('Loading menu...');
 
 	fetch(menuPath)
 		.then((res) => {
@@ -8,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 		.then((data) => {
 				const items = Array.isArray(data.menu) ? data.menu : [];
+				if (!items.length) {
+					throw new Error('Menu data is empty');
+				}
 
 				// grouping items by type preserving insertion order
 				const groups = items.reduce((acc, it) => {
@@ -48,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
 					groupItems.forEach((item) => {
 						const article = document.createElement('article');
 						article.className = 'menu-item';
-						article.setAttribute('aria-label', 'Meal');
 
 						const content = document.createElement('div');
 						content.className = 'menu-item-content';
@@ -71,9 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
 						content.appendChild(desc);
 
 						const aside = document.createElement('aside');
-						aside.setAttribute('aria-label', 'Price');
 						const priceP = document.createElement('p');
-						priceP.innerHTML = `<strong>${formatPrice(item.price)}</strong>`;
+						const priceStrong = document.createElement('strong');
+						priceStrong.textContent = formatPrice(item.price);
+						priceP.appendChild(priceStrong);
 						aside.appendChild(priceP);
 
 						article.appendChild(content);
@@ -82,7 +95,13 @@ document.addEventListener('DOMContentLoaded', () => {
 						section.appendChild(article);
 					});
 				});
+
+				setStatus('');
 			})
+		.catch((error) => {
+			console.error('Failed to load menu:', error);
+			setStatus('We could not load the menu right now. Please refresh the page or try again later.', true);
+		});
 
 	function formatPrice(val) {
 		if (typeof val === 'number') {

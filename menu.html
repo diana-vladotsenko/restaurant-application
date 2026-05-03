@@ -18,7 +18,7 @@
         <div class="container header-inner">
             <!-- Nav -->
             <nav class="nav">
-                <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to Homepage</a>
+                <a href="index.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Homepage</a>
             </nav>
             <div class="logo-area">
                 <h2><a href="index.html" class="logo">Hellas</a></h2>
@@ -28,6 +28,9 @@
 
     <!-- Main -->
     <main class="container">
+        <!-- Error handling -->
+        <p id="menu-status" role="status" aria-live="polite" aria-atomic="true"></p>
+
         <!-- Main Courses -->
         <section class="menu-section" aria-label="Main meals">
             <p class="p-ghost">Mains</p>
@@ -53,3 +56,4 @@
     <!-- Scripts -->
     <script src="src/js/menu.js"></script>
 </body>
+</html>

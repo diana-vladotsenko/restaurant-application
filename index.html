@@ -21,7 +21,7 @@
         <nav class="nav">
           <a href="#about">Our Story</a>
           <a href="#menu">Menu</a>
-          <button onclick="window.location.href='book_table.html'">Book a Table</button> <!-- Я поменял тебе на book_table тут если что -->
+          <a href="book_table.html" class="link-button">Book a Table</a>
         </nav>
       </div>
     </header>
@@ -35,7 +35,7 @@
             <h1>A Taste of the Aegean</h1>
             <p class="p-secondary">Simple, high-quality ingredients, prepared with love.</p>
             <br>
-            <button onclick="window.location.href='book_table.html'">Reserve Now</button> <!-- И здесь тоже -->
+            <a href="book_table.html" class="link-button">Reserve Now</a>
           </div>
         </div>
       </section>
@@ -62,36 +62,36 @@
             <h2>Our Menu</h2>
           </div>
           <div class="menu-grid">
-            <article class="menu-item" aria-label="Meal">
+            <article class="menu-item">
               <div class="menu-item-content">
-                <h4>Tzatziki</h4>
+                <h3>Tzatziki</h3>
                 <p class="p-secondary">Greek yogurt, cucumber, garlic, dill, served with warm pita</p>
               </div>
-              <aside aria-label="Price">
+              <aside>
                 <span class="badge">€8</span>
               </aside>
             </article>
-            <article class="menu-item" aria-label="Meal">
+            <article class="menu-item">
               <div class="menu-item-content">
-                <h4>Moussaka</h4>
+                <h3>Moussaka</h3>
                 <p class="p-secondary">Baked layers of eggplant, potato, minced meat, and rich béchamel</p>
               </div>
-              <aside aria-label="Price">
+              <aside>
                 <span class="badge">€8</span>
               </aside>
             </article>
-            <article class="menu-item" aria-label="Meal-Souvlaki Platter">
+            <article class="menu-item">
               <div class="menu-item-content">
-                <h4>Souvlaki Platter</h4>
+                <h3>Souvlaki Platter</h3>
                 <p class="p-secondary">Char-grilled skewers, pita bread, hand-cut fries, and tzatziki</p>
               </div>
-              <aside aria-label="Price">
+              <aside>
                 <span class="badge">€8</span>
               </aside>
             </article>
           </div>
           <div class="text-center" style="margin-top: 30px;">
-            <a href="menu.html">View Full Menu <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
+            <a href="menu.html">View Full Menu <i class="fa-solid fa-arrow-right" style="margin-left: 8px;" aria-hidden="true"></i></a>
           </div>
         </div>
       </section>
@@ -104,13 +104,13 @@
           <div class="footer-info">
             <h2>Hellas Taverna</h2>
             <p style="margin-bottom: 4px;">
-              <i class="fa-solid fa-building-columns"></i> Tallinna Ülikool
+              <i class="fa-solid fa-building-columns" aria-hidden="true"></i> Tallinna Ülikool
             </p>
             <p>
-              <i class="fa-solid fa-location-dot"></i> Narva mnt 25, 10120 Tallinn
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Narva mnt 25, 10120 Tallinn
             </p>
             <a href="https://maps.google.com/?q=Tallinna+Ülikool,+Narva+mnt+25,+Tallinn" target="_blank" rel="noopener noreferrer" style="margin: 12px 0;">
-              <i class="fa-solid fa-map"></i> View on Map
+              <i class="fa-solid fa-map" aria-hidden="true"></i> View on Map
             </a>
             <p style="margin-top: 16px;">© 2026 All Rights Reserved</p>
           </div>

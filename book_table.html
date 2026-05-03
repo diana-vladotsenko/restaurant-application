@@ -16,7 +16,7 @@
     <header class="header divider">
         <div class="container header-inner">
             <nav class="nav">
-                <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to Homepage</a>
+                <a href="index.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Homepage</a>
             </nav>
             <div class="logo-area">
                 <h2><a href="index.html" class="logo">Hellas</a></h2>
@@ -25,38 +25,39 @@
     </header>
 
     <main class="container-centered"> 
-        <h2>Book a Table</h2>
+        <h3>Book a Table</h3>
         
         <form id="book-a-table-form">
             <fieldset>
                 <legend>Reservation form</legend>
                 
-                <label for="name">Full Name</label><br/>
+                <label for="name">Full Name</label>
                 <p id="name-help" class="p-helper">Enter your full name.</p>
-                <input type="text" id="name" name="name" placeholder="John Doe" aria-describedby="name-help" autocomplete="name" required/><br/>
+                <input type="text" id="name" name="name" placeholder="John Doe" aria-describedby="name-help" autocomplete="name" required/>
 
-                <label for="email">Email</label><br/>
+                <label for="email">Email</label>
                 <p id="email-help" class="p-helper">Enter a valid email address we can use to contact you.</p>
-                <input type="email" id="email" name="email" placeholder="your@email.com" aria-describedby="email-help" autocomplete="email" required/><br/>
+                <input type="email" id="email" name="email" placeholder="your@email.com" aria-describedby="email-help" autocomplete="email" required/>
 
-                <label for="phone">Phonenumber</label><br/>
+                <label for="phone">Phonenumber</label>
                 <p id="phone-help" class="p-helper">Include your country code, e.g. +37212345678.</p>
-                <input type="tel" id="phone" name="phone" placeholder="+37212345678" inputmode="tel" aria-describedby="phone-help" autocomplete="tel" pattern="\+372[0-9]{7,8}" required/><br/>
+                <input type="tel" id="phone" name="phone" placeholder="+37212345678" inputmode="tel" aria-describedby="phone-help" autocomplete="tel" pattern="\+372[0-9]{7,8}" required/>
                 
-                <label for="reservation_date">Reservation Date & Time</label><br/>
+                <label for="reservation_date">Reservation Date & Time</label>
                 <p id="reservation-help" class="p-helper">Select a date and time for your reservation.</p>
-                <input type="datetime-local" id="reservation_date" name="reservation_date" aria-describedby="reservation-help" required><br/>
+                <input type="datetime-local" id="reservation_date" name="reservation_date" aria-describedby="reservation-help" required>
 
-                <label for="guest_count">How many people will be with you?</label><br/>
+                <label for="guest_count">How many people will be with you?</label>
                 <p id="guest-count-help" class="p-helper">Enter or choose the number of guests.</p>
-                <input type="number" id="guest_count" name="guest_count" min="1" max="20" step="1" aria-describedby="guest-count-help" required><br/>
+                <input type="number" id="guest_count" name="guest_count" min="1" max="20" step="1" aria-describedby="guest-count-help" required>
 
-                <label for="note">Note (Optional)</label><br/>
+                <label for="note">Note (Optional)</label>
                 <p id="note-help" class="p-helper">Add any notes or requests. Maximum 300 characters.</p>
-                <textarea id="note" name="note" rows="4" cols="30" placeholder="Any notes or requests" aria-describedby="note-help" maxlength="300"></textarea><br/>
+                <textarea id="note" name="note" rows="4" cols="30" placeholder="Any notes or requests" aria-describedby="note-help" maxlength="300"></textarea>
                 
                 <button type="submit">Book a table</button>
                 <p id="success-text" class="p-success" aria-live="polite"></p>
+                <p id="error-text" class="p-error" aria-live="polite"></p>
             </fieldset>
         </form>
     </main>
