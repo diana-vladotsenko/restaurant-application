@@ -13,5 +13,9 @@ if (form && successText) {
     successText.textContent = "Thank You! You have successfully booked a table!";
 
     form.reset();
+    
+    setTimeout(() => {
+        successText.textContent = "";
+    }, 5000);
   });
 }

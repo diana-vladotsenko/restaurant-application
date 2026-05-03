@@ -3,18 +3,17 @@ $primary-color: #000000; // Primary theme color for buttons, links
 $disabled-color: #bdc3c7; // Neutral color for disabled states
 $focus-color: #2545c3; // Accesibility color for focus states
 $success-color: #2b973a; // Success accent color for success actions
-// $success-content: #249233; // Success content color for success action
 $error-color: #dd3822; // Error accent color for warning actions
-// $error-content: #dd3822; // Error content color for warning action
 $bg-color: #FFFFFF; // Background color
 
 $text-main-color: #000000; // Text color for Main Text, Headers
 $text-secondary-color: #334155; // Text color for Secondary Text, Headers
-$text-ghost-color: #98A1B0; // Text color for Ghost Text, Headers
-$color-border: #1A1A1A; // Color for borders, dividers
-
+$text-ghost-color: #677285; // Text color for Ghost Text, Headers
+$color-border: #1A1A1A; // Dark Color for borders, dividers
+$light-color-border: #d9d9d9; // Light color for borders, dividers
 
 /* Mixins */
+/* Shared button/link/badge styling used to keep controls visually consistent. */
 @mixin control-base() {
     display: inline-flex;
     justify-content: center;
@@ -29,17 +28,20 @@ $color-border: #1A1A1A; // Color for borders, dividers
     color: $primary-color;
 }
 
+/* Reusable disabled-state styling for buttons and form fields. */
 @mixin disabled-style{
     background: transparent;
-    -webkit-text-fill-color: $disabled-color; // to ensure Chrome/Safari apply text color
+    -webkit-text-fill-color: $disabled-color;
     border: 1px solid $disabled-color;
     cursor: not-allowed;
 }
 
+/* Focus ring used for keyboard accessibility on interactive elements. */
 @mixin focus-style{
     outline: 2px solid $focus-color;
 }
 
+/* Standard input sizing and text color for form controls. */
 @mixin input{
     box-sizing: border-box;
     width: 100%;
@@ -48,81 +50,52 @@ $color-border: #1A1A1A; // Color for borders, dividers
     border: 1px solid $color-border;
     margin-bottom: 12px;
     background: $bg-color;    
-    -webkit-text-fill-color: $text-ghost-color; // ensure Chrome/Safari apply text color
+    -webkit-text-fill-color: $text-ghost-color;
 }
-
 
 /* Main Elements */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     min-height: 100vh;
     font-family: 'Open Sans', sans-serif;
     background: $bg-color;
-    margin: 20px;
-    min-width: 850px;
 }
 
-main{
+main {
     min-height: 100vh;
 }
 
-
 /* Headings */
-h1,h2,h3,h4{
+h1, h2, h3, h4 {
     color: $text-main-color;
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 12px; 
 }
 
-h1{
-    font-size: 3rem;
-}
-
-h2{
-    font-size: 1.75rem;
-}
-
-h3{
-    font-size: 1.5rem;
-}
-
-h4{
-    font-size: 1.125rem;
-}
+h1 { font-size: 3rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.125rem; }
 
 /* Body text */
-p{
+p {
     color: $text-main-color;
     font-size: 1.125rem;
     line-height: 1.6;
 }
 
 .p-secondary,
-.p-helper{
-    color: $text-secondary-color;
-}
-
-.p-ghost{
-    color: $text-ghost-color;
-}
-
-.p-helper{
-    font-size: 14px;
-}
-
-.p-success{
-    color: $success-color;
-}
-
-.p-error{
-    color: $error-color;
-}
-
+.p-helper { color: $text-secondary-color; }
+.p-ghost { color: $text-ghost-color; }
+.p-helper { font-size: 14px; }
+.p-success { color: $success-color; margin-top: 12px; font-weight: 600; }
+.p-error { color: $error-color; margin-bottom: 12px; font-weight: 600; }
 
 /* Buttons */
 button {
@@ -138,10 +111,14 @@ a:active {
 }
 
 button:disabled {
-    @include disabled-style;
+    @include disabled-style();
 }
 
-a{
+.link-button {
+    @include control-base();
+}
+
+a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -155,44 +132,28 @@ a{
 }
 
 /* Inputs & Form Elements */
-input,
-textarea{
+input, textarea {
     @include input();
 }
 
-textarea{
+textarea {
     min-height: 100px;
     resize: vertical;
 }
 
-input:hover,
-textarea:hover,
-input:active,
-textarea:active{
+input:hover, textarea:hover,
+input:active, textarea:active {
     outline: 1px solid $color-border;
 }
 
-input:disabled,
-textarea:disabled{
-    @include disabled-style;
+input:disabled, textarea:disabled {
+    @include disabled-style();
 }
 
-form{
-    gap: 12px;
-}
-
-fieldset{
-    border: 0;
-}
-
-label{
-    font-weight: 600;
-}
-
-legend{
-    font-weight: 700;
-    margin-bottom: 12px;
-}
+form { gap: 12px; }
+fieldset { border: 0; }
+label { font-weight: 600; }
+legend { font-weight: 700; margin-bottom: 12px; }
 
 /* Other components */
 .badge {
@@ -200,22 +161,16 @@ legend{
     min-width: 8px;
     min-height: 8px;
     font-size: 0.625rem;
+    padding: 2px 8px;
 }
 
-.book-table-container{
-    max-width: 510px;
-    margin: 24px auto;
-    display: block;
-}
+.divider { border-bottom: 1px solid $color-border; }
 
-.divider{
-    border-bottom: 1px solid $color-border;
-}
+i { margin-right: 8px;}
 
-/* Other */
-/* Shared focus accessibility: interactive elements use the same focus color so the UI feels consistent */
+
+/* Accessibility */
 button:focus-visible,
-.badge:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 a:focus-visible {
@@ -223,120 +178,212 @@ a:focus-visible {
 }
 
 
-/* Responsivness */
+/* Layouts & Sections */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
 
+.container-centered {
+    max-width: 510px;
+    margin: 24px auto;
+    display: block;
+    padding: 10px 20px;
+}
+
+
+.text-center { text-align: center; }
+
+/* Header */
+.header {
+    position: sticky;
+    top: 0;
+    background-color: $bg-color;
+    z-index: 100;
+
+    .header-inner {
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        margin: 0;
+        border: none;
+        text-decoration: none;
+        font-size: 1.75rem;
+        font-weight: 700;
+        &:hover { text-decoration: none; }
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        
+        a { margin: 0 10px; }
+    }
+}
+
+/* Hero */
+.hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('https://images.unsplash.com/photo-1659003341841-0b1d8c464539?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.85); 
+    }
+
+    .hero-inner {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .hero-content {
+        border: 2px solid $primary-color;
+        background: $bg-color;
+        padding: 60px 40px;
+        box-shadow: 8px 8px 0 0 $primary-color; 
+    }
+}
+
+/* About Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+
+    .about-image {
+        border: 2px solid $primary-color;
+        box-shadow: -8px 8px 0 0 $primary-color;
+        height: 100%;
+        min-height: 350px;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+}
+
+/* Menu */
+.menu { background-color: $bg-color; }
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 40px;
+
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.menu-section{ margin-bottom: 24px; }
+
+.menu-status { margin-bottom: 16px; }
+
+.menu-item{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px dashed $light-color-border;
+}
+
+.menu-item-content{ flex: 1 1 auto; min-width: 0; }
+
+/* Footer */
+.footer {
+    background-color: #f5f5f5;
+    border-top: 1px solid $color-border;
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+
+        input { margin-bottom: 0; }
+    }
+}
+
+/* Responsivness */
 /* Tablet: 768px and up */
 @media (max-width: 768px) {
-    body {
-        margin: 16px;
-        min-width: auto;
-    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    p { font-size: 1rem; }
 
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    h3 {
-        font-size: 1.25rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    form {
-        max-width: 100%;
-        gap: 4px;
-    }
-
-    input,
-    textarea {
-        max-width: 100%;
-    }
-
+    form { gap: 4px; }
     button {
         min-width: 120px;
         min-height: 36px;
         font-size: 0.9rem;
     }
 
-    label {
-        font-size: 0.95rem;
+    .p-helper { font-size: 0.85rem; }
+
+    .about-grid, 
+    .footer-grid {
+        grid-template-columns: 1fr;
     }
 
-    .p-helper {
-        font-size: 0.85rem;
-        margin: 3px 0 5px;
+    .hero .hero-content {
+        padding: 40px 20px;
     }
 
-    .book-table-container {
+    .footer .form-row {
+        flex-direction: column;
+        button { width: 100%; margin: 10px 0 0 0; }
+    }
+
+    .menu-item{
         max-width: 100%;
-        padding: 12px;
     }
 }
 
 /* Mobile: 480px */
 @media (max-width: 480px) {
-    body {
-        margin: 12px;
-        padding: 0;
-    }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1.1rem; }
+    legend,p { font-size: 0.95rem; }
 
-    h1 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-    }
-
-    legend, h2 {
-        font-size: 1.25rem;
-    }
-
-    h3 {
-        font-size: 1.1rem;
-    }
-
-    p {
-        font-size: 0.95rem;
-    }
-
-    form {
-        max-width: 100%;
-        gap: 8px;
-    }
-
+    form { gap: 8px; }
+    
     button {
         width: 100%;
         min-height: 44px;
         font-size: 0.9rem;
     }
 
-    input,
-    textarea {
-        max-width: 100%;
-        padding: 6px;
-        font-size: 16px; // prevents zoom on iOS
-        margin-bottom: 10px;
-    }
-
-    textarea {
-        min-height: 80px;
-    }
-
-    label {
-        font-size: 0.9rem;
-    }
-
-    legend {
-        font-weight: 700;
-    }
-
-    .p-helper {
-        font-size: 0.8rem;
-        margin: 2px 0 4px;
+    input, textarea {
+        font-size: 16px; /* prevents zoom on iOS */
     }
 
     .badge {
@@ -344,5 +391,24 @@ a:focus-visible {
         min-height: 6px;
         font-size: 0.55rem;
     }
-}
 
+    .header .header-inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .header .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        button { margin: 10px 0; }
+    }
+    
+    .menu-item {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .menu-item aside { 
+        text-align: right; 
+    }
+}

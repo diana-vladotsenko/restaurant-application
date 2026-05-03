@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Full Menu | Hellas Taverna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+
+
+<body>
+    <!-- Header -->
+    <header class="header divider">
+        <div class="container header-inner">
+            <!-- Nav -->
+            <nav class="nav">
+                <a href="index.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Homepage</a>
+            </nav>
+            <div class="logo-area">
+                <h2><a href="index.html" class="logo">Hellas</a></h2>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="container">
+        <!-- Error handling -->
+        <p id="menu-status" role="status" aria-live="polite" aria-atomic="true"></p>
+
+        <!-- Main Courses -->
+        <section class="menu-section" aria-label="Main meals">
+            <p class="p-ghost">Mains</p>
+            <h3>Main Courses</h3>
+            <div class="divider" aria-hidden="true"></div>
+        </section>
+
+        <!-- Grill Specials -->
+        <section class="menu-section" aria-label="Meals from the grill">
+            <p class="p-ghost">From the grill</p>
+            <h3>Grill Specials</h3>
+            <div class="divider" aria-hidden="true"></div>
+        </section>
+
+        <!-- Drinks & Beverages -->
+        <section class="menu-section" aria-label="Beverages">
+            <p class="p-ghost">Beverages</p>
+            <h3>Drinks & Beverages</h3>
+            <div class="divider" aria-hidden="true"></div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="src/js/menu.js"></script>
+</body>
+</html>
